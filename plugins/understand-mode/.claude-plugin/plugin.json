@@ -1,0 +1,10 @@
+{
+  "name": "understand-mode",
+  "version": "0.1.0",
+  "description": "Makes Claude explain its work in the fastest format to understand: STE-style text, diagrams, throwaway HTML pages or explainer videos, alone or combined, chosen by project and context.",
+  "author": { "name": "elharchaoui", "url": "https://github.com/elharchaoui" },
+  "homepage": "https://github.com/elharchaoui/claude-mods",
+  "repository": "https://github.com/elharchaoui/claude-mods",
+  "license": "MIT",
+  "keywords": ["explanations", "diagrams", "system-prompt", "oversight"]
+}

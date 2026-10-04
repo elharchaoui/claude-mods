@@ -1,0 +1,4 @@
+{
+  "description": "Understand Mode hooks module",
+  "modules": ["./register.ts"]
+}

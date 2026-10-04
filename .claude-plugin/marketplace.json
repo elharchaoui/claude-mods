@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "elharchaoui-mods",
+  "description": "Claude Code mods by elharchaoui",
+  "owner": { "name": "elharchaoui", "url": "https://github.com/elharchaoui" },
+  "plugins": [
+    {
+      "name": "understand-mode",
+      "description": "Makes Claude explain its work in the fastest format to understand: STE-style text, diagrams, throwaway HTML pages or explainer videos.",
+      "version": "0.1.0",
+      "author": { "name": "elharchaoui" },
+      "category": "productivity",
+      "source": "./plugins/understand-mode"
+    }
+  ]
+}
