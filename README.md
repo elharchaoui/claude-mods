@@ -15,7 +15,23 @@ Requires a Claude Code build with function-hook mods (`hooks/register.ts`). Buil
 
 Your main job with an agent is oversight: reading what it produces. This mod makes Claude pick the output format that is fastest for you to understand and verify.
 
-It adds one section to the system prompt. That section tells Claude to choose between four formats, alone or combined:
+<p align="center">
+  <img src="docs/understand-mode-demo.svg" width="860" alt="Animated demo: four requests, four formats. 'What changed in the auth service?' gets STE text. 'How do the services talk to each other?' gets a box diagram. 'Compare the 40 benchmark runs' gets an HTML explorer. 'How does gradient descent find the minimum?' gets an explainer video.">
+</p>
+
+### How it works
+
+```mermaid
+flowchart LR
+    CMD["/understand diagram"] -->|"sets"| MODE[("mode<br/>auto · text · diagram<br/>html · video · off")]
+    MODE -->|"read by"| HOOK["prompt.compose hook"]
+    HOOK -->|"appends the<br/>Understand Mode section"| SYS["system prompt"]
+    SYS --> CLAUDE["Claude"]
+    PROMPT["your prompt"] --> CLAUDE
+    CLAUDE -->|"picks the lightest<br/>format that works"| OUT{{"text · diagram<br/>html page · video"}}
+```
+
+The mod adds one section to the system prompt on every turn. That section tells Claude to choose between four formats, alone or combined:
 
 | Format | Used for |
 | --- | --- |
